@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>electicity unit  calculator</title>
+    <link rel="stylesheet" href="./tailwind.css">
+</head>
+<body class=" ">
+
+   
+<section class="bg-red-50 p-5">
+    <p class="text-4xl capitalize p-5 text-center font-bold  animate-pulse">electicity bill calculator</p>
+</section>
+<section class="bg-purple-50 overflow-hidden">
+    
+    <p class="capitalize text-lg lg:text-3xl text-center px-2 lg:p-5 hidden lg:block" >the calculator for eb unit  in tamil nadu (alone)</p>
+    <div class="flex justify-center block lg:hidden py-5" >
+
+        <p class="capitalize  text-3xl text-center font-bold text-center lg:p-5 ">EB unit calculator </p>
+    </div>
+ <div>
+
+     <div class="flex justify-center text-2xl -ml-16">
+         <p class="capitalize mr-2 -ml-4">load:</p> 
+    <select  id="data_insert" class="px-3" onclick="triger()">
+        <option value="nodata">select an option </option>
+     <option value="washing_machine">washing machine </option>
+     <option value="water_heater">water heater </option>
+     <option value="Ironbox">iron box </option>
+     <option value="other">other</option>
+     <!-- (2000 wats)  -->
+ 
+    </select>
+     </div>
+     <div class="flex lg:justify-center -ml-3 lg:ml-0">
+         <div class="flex p-5 text-2xl">
+           <p class="capitalize mr-3 "> units:</p> 
+           <input type="number" id="units" required class="bg-red-500 rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300  w-52" placeholder="enter the units">
+       <p class="ml-2 font-bold capitalize ">kw</p>
+           
+         </div>
+     </div>
+     <div class="flex lg:justify-center -ml-3 lg:ml-0">
+        <div class="flex p-5 text-2xl lg:-ml-11">
+          <p class="capitalize mr-4 "> days:</p> 
+          <input type="number" id="days" required class="bg-red-500 rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the days">
+        </div>
+    </div>
+    <div class="flex lg:justify-center -ml-3 lg:ml-0">
+        <div class="flex p-5 text-2xl lg:-ml-3">
+          <p class="capitalize mr-1 "> hours:</p> 
+          <input type="number" required id="hours" class="bg-red-500 rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the hours">
+          <p class="ml-3 font-bold">h</p>
+        </div>
+    </div>
+    <div class="flex justify-center  lg:ml-0">
+        <button onclick="result()" class="p-5 bg-green-500 text-2xl lg:hover:bg-red-500 duration-200 capitalize  text-white font-bold rounded">result</button>
+    </div>
+    <div class="flex justify-center  text-2xl py-10">
+        <p class="px-4">ECC:</p><div class="animate-bounce flex">
+            <p id="rs" class="hidden">₹</p><p  id="output"></p>
+        </div>
+    </div>
+ </div>
+</section>
+<style>
+
+</style>
+<script src="./INDEX.JS"></script>
+</body>
+</html>
