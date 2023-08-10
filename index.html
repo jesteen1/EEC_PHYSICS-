@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>electicity unit  calculator</title>
     <link rel="stylesheet" href="./tailwind.css">
+    <link rel="icon" href="./logo.png">
 </head>
 <body class=" ">
 
@@ -21,14 +22,18 @@
     </div>
  <div>
 
-     <div class="flex justify-center text-2xl -ml-16">
-         <p class="capitalize mr-2 -ml-4">load:</p> 
-    <select  id="data_insert" class="px-3" onclick="triger()">
-        <option value="nodata">select an option </option>
-     <option value="washing_machine">washing machine </option>
-     <option value="water_heater">water heater </option>
-     <option value="Ironbox">iron box </option>
-     <option value="other">other</option>
+     <div class="flex lg:justify-center text-2xl ml-4 lg:-ml-4 ">
+         <p class="capitalize mr-4 -ml-1">load:</p> 
+    <select  id="data_insert" class="px-3 border" onclick="triger()">
+        <option value="nodata" class="text-center capitalize">select an option </option>
+     <option value="washing_machine" class="text-center capitalize">washing machine </option>
+     <option value="water_heater" class="text-center capitalize">water heater </option>
+     <option value="Ironbox" class="text-center capitalize">iron box </option>
+     <option value="Ac" class="text-center capitalize">AC</option>
+     <option value="Tv" class="text-center capitalize">Tv </option>
+     <option value="Fan" class="text-center capitalize">Fan</option>
+     <option value="other" title="(you can enter the your  values in unit field or box )" class="text-center  capitalize block"> <p>other</p>
+        </option>
      <!-- (2000 wats)  -->
  
     </select>
@@ -36,7 +41,7 @@
      <div class="flex lg:justify-center -ml-3 lg:ml-0">
          <div class="flex p-5 text-2xl">
            <p class="capitalize mr-3 "> units:</p> 
-           <input type="number" id="units" required class="bg-red-500 rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300  w-52" placeholder="enter the units">
+           <input type="number" id="units" required class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300  w-52" placeholder="enter the units">
        <p class="ml-2 font-bold capitalize ">kw</p>
            
          </div>
@@ -44,27 +49,39 @@
      <div class="flex lg:justify-center -ml-3 lg:ml-0">
         <div class="flex p-5 text-2xl lg:-ml-11">
           <p class="capitalize mr-4 "> days:</p> 
-          <input type="number" id="days" required class="bg-red-500 rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the days">
+          <input type="number" id="days" required class="bg-red-500 rounded border text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the days">
         </div>
     </div>
     <div class="flex lg:justify-center -ml-3 lg:ml-0">
         <div class="flex p-5 text-2xl lg:-ml-3">
           <p class="capitalize mr-1 "> hours:</p> 
-          <input type="number" required id="hours" class="bg-red-500 rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the hours">
+          <input type="number" required id="hours" class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the hours">
           <p class="ml-3 font-bold">h</p>
         </div>
     </div>
-    <div class="flex justify-center  lg:ml-0">
-        <button onclick="result()" class="p-5 bg-green-500 text-2xl lg:hover:bg-red-500 duration-200 capitalize  text-white font-bold rounded">result</button>
-    </div>
-    <div class="flex justify-center  text-2xl py-10">
-        <p class="px-4">ECC:</p><div class="animate-bounce flex">
-            <p id="rs" class="hidden">₹</p><p  id="output"></p>
+     
+        <div class="flex justify-center mt-7 lg:ml-0">
+           
+            <button onclick="result()" class="p-5 bg-green-500 text-2xl border lg:hover:bg-red-500 duration-200 capitalize  text-white font-bold rounded"> <a href="#outcome">result</a></button>
+  
+        </div>
+  
+   
+    <div class="flex justify-center  text-2xl py-10 mt-2  ">
+        <p class="px-4 font-bold" >EEC:</p><div class="animate-bounce flex">
+            <p id="rs" class="hidden ">₹</p><p  id="output"></p>
         </div>
     </div>
  </div>
+</section >
+<section  class=" p-7   md:p-10 bg-green-50"  id="outcome">
+<p class="text-center  text-lg md:text-3xl">&copy; 2023 created by jesteen. All rights reserved.</p>
 </section>
+<section class=" overflow-hidden bg-gradient-to-l from-blue-500 to-pink-500 conent h-1  lg:h-36 "></section>
 <style>
+html{
+    scroll-behavior: smooth;
+}
 
 </style>
 <script src="./INDEX.JS"></script>
