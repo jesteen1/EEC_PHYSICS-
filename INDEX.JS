@@ -1,11 +1,10 @@
-const load={
+var load={
     washingmachine:2,
     Ironbox:2,
     water_heater:3,
     fan:0.8,
     tv:0.2,
-    Ac:4,
-
+    Ac:4
 }
 var data_insert=document.getElementById("data_insert");
 var units=document.getElementById("units");
@@ -40,6 +39,9 @@ data_insert.classList.remove("border-red-500");
             }
          
          
+}
+data_insert.onclick=()=>{
+triger();
 }
 function result(){
     if(units.value==""){
