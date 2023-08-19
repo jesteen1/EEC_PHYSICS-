@@ -175,24 +175,25 @@ function result(){
                 else{
                     
                     var kwh=units.value*hours.value*days.value;
-                    if(kwh<=401){
-                             if(kwh>=500){
+                    console.log(kwh);
+                    if(kwh>=401){
+                             if(kwh<=500){
                                 cost=6;
                              }
-                            else if(kwh<=501){
+                            else if(kwh>=501){
                                 
-                                if(kwh>=600){
+                                if(kwh<=600){
                                     cost=8;
                                 }
-                                else if(kwh<=601){
-if(kwh>=800){
+                                else if(kwh>=601){
+if(kwh<=800){
 cost=9
 }
-else if(kwh<=801){
-    if(kwh>=1000){
+else if(kwh>=801){
+    if(kwh<=1000){
 cost=10
     }
-    else if(kwh<=1000){
+    else if(kwh>=1000){
         cost=11
     }
 }
