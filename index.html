@@ -7,87 +7,108 @@
     <link rel="stylesheet" href="./tailwind.css">
     <link rel="icon" href="./logo.png">
 </head>
-<body class=" ">
+<body class="  border border-black h-full ">
 
-   
-<section class="bg-red-50 p-5">
-    <p class="text-4xl capitalize p-5 text-center font-bold  animate-pulse">electicity bill calculator</p>
-</section>
-<section class="bg-purple-50 overflow-hidden">
-    
-    <p class="capitalize text-lg lg:text-3xl text-center px-2 lg:p-5 hidden lg:block" >the calculator for eb unit  in tamil nadu (alone)</p>
-    <div class="flex justify-center block lg:hidden py-5" >
+   <section class="overflow-hidden min-h-full">
 
-        <p class="capitalize  text-3xl text-center font-bold text-center lg:p-5 ">EB unit calculator </p>
-    </div>
- <div>
+       <section class="bg-red-50 p-5" >
+           <p class="text-4xl capitalize p-5 text-center font-bold  animate-pulse">electicity bill calculator</p>
+       </section>
+       <section class="">
+        <p class="text-2xl  text-center font-bold bg-purple-100 p-5 capitalize ">The cost of electriity in tamil nadu for per  unit</p>
+        <div class="flex justify-center">
 
-     <div class="flex lg:justify-center text-2xl ml-4 lg:-ml-4 ">
-         <p class="capitalize mr-4 -ml-1">load:</p> 
-    <select  id="data_insert" class="px-3 border" onchange="triger()">
+            <img src="./unit.jpg" alt=" unit" class="">
+        </div>
+       </section>
+       <section class="p-5 lg:p-10 customcolor text-white rounded-2xl " id="remover">
+          <button class="relative bottom-5 lg:bottom-9 text-2xl -ml-6 lg:-ml-9 text-black  w-10 hover:text-blue-500 " onclick="remover()">x</button>
+       <p class="text-2xl capitalize text-center  relative -top-2 ">iT is only for domestic purpose </p>
        
-            <option value="nodata" class="text-center capitalize">select an option </option>
-         <option value="washing_machine" class="text-center capitalize">washing machine </option>
-         <option value="water_heater" class="text-center capitalize">water heater </option>
-         <option value="Ironbox" class="text-center capitalize">iron box </option>
-         <option value="Ac" class="text-center capitalize">AC</option>
-         <option value="Tv" class="text-center capitalize">Tv </option>
-         <option value="Fan" class="text-center capitalize">Fan</option>
+       </section>
+           
+       <section class="bg-purple-50 overflow-hidden">
+           
+           <p class="capitalize text-lg lg:text-3xl text-center px-2 lg:p-5 hidden lg:block" >the calculator for eb unit  in tamil nadu (alone)</p>
+           <div class="flex justify-center block lg:hidden py-5" >
+       
+               <p class="capitalize  text-3xl text-center font-bold text-center lg:p-5 ">EB unit calculator </p>
+           </div>
+        <div>
+       
+            <div class="flex lg:justify-center text-2xl ml-4 lg:-ml-4 ">
+                <p class="capitalize mr-4 -ml-1">load:</p> 
+           <select  id="data_insert" class="px-3 border" onchange="triger()">
+              
+                   <option value="nodata" class="text-center capitalize">select an option </option>
+                <option value="washing_machine" class="text-center capitalize">washing machine </option>
+                <option value="water_heater" class="text-center capitalize">water heater </option>
+                <option value="Ironbox" class="text-center capitalize">iron box </option>
+                <option value="Ac" class="text-center capitalize">AC</option>
+                <option value="Tv" class="text-center capitalize">Tv </option>
+                <option value="Fan" class="text-center capitalize">Fan</option>
+               
+            <option value="other" title="(you can enter the your  values in unit field or box )" class="text-center  capitalize block"> <p>other</p>
+               </option>
+            <!-- (2000 wats)  -->
         
-     <option value="other" title="(you can enter the your  values in unit field or box )" class="text-center  capitalize block"> <p>other</p>
-        </option>
-     <!-- (2000 wats)  -->
- 
-    </select>
-     </div>
-     <div class="flex lg:justify-center -ml-3 lg:ml-0">
-         <div class="flex p-5 text-2xl">
-           <p class="capitalize mr-3 "> units:</p> 
-           <input type="number" id="units" required class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300  w-52" placeholder="enter the units">
-       <p class="ml-2 font-bold capitalize ">kw</p>
-           
-         </div>
-     </div>
-     <div class="flex lg:justify-center -ml-3 lg:ml-0">
-        <div class="flex p-5 text-2xl lg:-ml-11">
-          <p class="capitalize mr-4 "> days:</p> 
-          <input type="number" id="days" required class="bg-red-500 rounded border text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the days">
+           </select>
+            </div>
+            <div class="flex lg:justify-center -ml-3 lg:ml-0">
+                <div class="flex p-5 text-2xl">
+                  <p class="capitalize mr-3 "> units:</p> 
+                  <input type="number" id="units" required class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300  w-52" placeholder="enter the units">
+              <p class="ml-2 font-bold capitalize ">kw</p>
+                  
+                </div>
+            </div>
+            <div class="flex lg:justify-center -ml-3 lg:ml-0">
+               <div class="flex p-5 text-2xl lg:-ml-11">
+                 <p class="capitalize mr-4 "> days:</p> 
+                 <input type="number" id="days" required class="bg-red-500 rounded border text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the days">
+               </div>
+           </div>
+           <div class="flex lg:justify-center -ml-3 lg:ml-0">
+               <div class="flex p-5 text-2xl lg:-ml-3">
+                 <p class="capitalize mr-1 "> hours:</p> 
+                 <input type="number" required id="hours" class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the hours">
+                 <p class="ml-3 font-bold">h</p>
+               </div>
+           </div>
+            
+               <div class="flex justify-center mt-7 lg:ml-0">
+                  
+                   <button onclick="result()" class="p-5 bg-blue-500 text-2xl border lg:hover:bg-yellow-500 duration-200 capitalize  text-white font-bold rounded"> <a href="#outcome">result</a></button>
+         
+               </div>
+         
+          
+           <div class="flex justify-center  text-2xl py-10 mt-2  ">
+               <p class="px-4 font-bold" >EEC:</p><div class="animate-bounce flex">
+                   <p id="rs" class="hidden ">₹</p><p  id="output"></p>
+               </div>
+           </div>
         </div>
-    </div>
-    <div class="flex lg:justify-center -ml-3 lg:ml-0">
-        <div class="flex p-5 text-2xl lg:-ml-3">
-          <p class="capitalize mr-1 "> hours:</p> 
-          <input type="number" required id="hours" class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-300  w-52" placeholder="enter the hours">
-          <p class="ml-3 font-bold">h</p>
-        </div>
-    </div>
-     
-        <div class="flex justify-center mt-7 lg:ml-0">
-           
-            <button onclick="result()" class="p-5 bg-blue-500 text-2xl border lg:hover:bg-yellow-500 duration-200 capitalize  text-white font-bold rounded"> <a href="#outcome">result</a></button>
-  
-        </div>
-  
-   
-    <div class="flex justify-center  text-2xl py-10 mt-2  ">
-        <p class="px-4 font-bold" >EEC:</p><div class="animate-bounce flex">
-            <p id="rs" class="hidden ">₹</p><p  id="output"></p>
-        </div>
-    </div>
- </div>
-</section >
-<section  class=" p-7   md:p-10 bg-green-50"  id="outcome">
-<p class="text-center  text-lg md:text-3xl">&copy; 2023 created by jesteen. All rights reserved.</p>
-</section>
-<section class=" overflow-hidden bg-gradient-to-l from-blue-500 to-pink-500 conent h-1  lg:h-36 "></section>
+       </section >
+       <section  class=" p-7   md:p-10 bg-green-50"  id="outcome">
+       <p class="text-center  text-lg md:text-3xl">&copy; 2023 created by jesteen. All rights reserved.</p>
+       </section>
+       <!-- <section class=" overflow-hidden bg-gradient-to-l from-blue-500 to-pink-500 conent   lg:h-40 "></section>
+   </section> -->
 <style>
 html{
     scroll-behavior: smooth;
 }
-
+.customcolor{
+    background-color: rgb(255, 108, 97);
+}
 </style>
 <script>
-
+var remove=document.getElementById("remover");
+function remover(){
+remove.classList.add('hidden')
+  
+}
 var load={
     washingmachine:2,
     Ironbox:2,
@@ -102,6 +123,8 @@ var hours=document.getElementById("hours");
 var days=document.getElementById("days");
 var result_output=document.getElementById("output")
 var rs=document.getElementById("rs")
+var cost=4.5;
+
 function triger(){
 data_insert.classList.remove("border-red-500");
     if(data_insert.value=="washing_machine"){
@@ -149,8 +172,37 @@ function result(){
                     data_insert.classList.add("border-red-500");
                 }
                 else{
+                    
+                    var kwh=units.value*hours.value*days.value;
+                    if(kwh<=401){
+                             if(kwh>=500){
+                                cost=6;
+                             }
+                            else if(kwh<=501){
+                                
+                                if(kwh>=600){
+                                    cost=8;
+                                }
+                                else if(kwh<=601){
+if(kwh>=800){
+cost=9
+}
+else if(kwh<=801){
+    if(kwh>=1000){
+cost=10
+    }
+    else if(kwh<=1000){
+        cost=11
+    }
+}
 
-                    var   EEC =units.value*hours.value*days.value*3;
+}
+
+                            }
+                           
+                    }
+                    var EEC =units.value*hours.value*days.value*cost;
+                    
                        result_output.innerText=EEC.toFixed(2);
                        rs.classList.remove("hidden")
                        rs.classList.add("block")
@@ -161,6 +213,7 @@ function result(){
     }
 
 }
+
 </script>
 </body>
 </html>
