@@ -202,7 +202,7 @@ cost=10
                             }
                            
                     }
-                    var EEC =units.value*hours.value*days.value/24*cost;
+                    var EEC =units.value*hours.value*days.value*cost;
                     
                        result_output.innerText=EEC.toFixed(2);
                        rs.classList.remove("hidden")
