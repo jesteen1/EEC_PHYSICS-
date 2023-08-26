@@ -23,16 +23,17 @@
        </section>
        <section class="p-5 lg:p-10 customcolor text-white rounded-2xl " id="remover">
           <button class="relative bottom-5 lg:bottom-9 text-2xl -ml-6 lg:-ml-9 text-black  w-10 hover:text-blue-500 " onclick="remover()">x</button>
-       <p class="text-2xl capitalize text-center  relative -top-2 ">iT is only for domestic purpose </p>
+       <p class="text-2xl capitalize text-center  relative -top-2 ">iT is only for domestic purpose  </p>
        
        </section>
            
        <section class="bg-purple-50 overflow-hidden">
            
-           <p class="capitalize text-lg lg:text-3xl text-center px-2 lg:p-5 hidden lg:block" >the calculator for eb unit  in tamil nadu (alone)</p>
+           <p class="capitalize text-lg lg:text-3xl text-center px-2 lg:p-5 hidden lg:block" >calculator for one application  consumed energy in  cost  for tamil people </p>
+           <!-- The calculator for eb unit  in tamil nadu (alone) -->
            <div class="flex justify-center block lg:hidden py-5" >
        
-               <p class="capitalize  text-3xl text-center font-bold text-center lg:p-5 ">EB unit calculator </p>
+               <p class="capitalize  text-3xl text-center font-bold text-center lg:p-5 ">calculator for  one application    consumed energy  in cost </p>
            </div>
         <div>
        
@@ -90,7 +91,50 @@
            </div>
         </div>
        </section >
-       <section  class=" p-7   md:p-10 bg-green-50"  id="outcome">
+       <section class="bg-yellow-50" id="video-info">
+        <div class="p-5 ">
+            <p class="capitalize text-2xl font-bold lg:text-4xl  text-center">how to see the units eb meter </p>
+            <div class="justify-center flex">
+
+                <video src="./electricityvideo.mp4" controls class="p-5 rounded"></video>
+            </div>
+        </div>
+       </section>
+       <section class="p-5 lg:p-10 customcolor text-white rounded-2xl " id="remover1">
+        <button class="relative bottom-5 lg:bottom-9 text-2xl -ml-6 lg:-ml-9 text-black  w-10 hover:text-blue-500 " onclick="otherremove()">x</button>
+     <p class="text-2xl capitalize text-center  relative -top-2 ">the value hear genearted are not accurate but 60% it may accurate  </p>
+     
+     </section>
+       <section class="bg-blue-50 lg:p-5">
+        <p class="capitalize font-bold text-2xl lg:text-4xl text-center p-5">  eb unit to amount</p>
+
+        <div class="mt-5 ">
+            <div class="flex lg:justify-center text-2xl  ml-2   lg:-ml-1 ">
+<p class="capitalize "> billing cycle:</p>
+                <select  id="data_insert_home" class="px-6 border capitalize text-xl  ml-1 border" onchange="start()">
+                  
+                    <option value="novalue" class="text-center capitalize">select an option </option>
+             
+             <option value="monthly" class="text-center capitalize">monthly</option>
+             <option value="bi_monthly" class="text-center capitalize">bi-monthly</option>
+            </select>
+            </div>
+            <div class="flex ml-14  lg:mr-16 mt-6 lg:justify-center p-5  text-2xl">
+                <p class="capitalize mr-10 flex gap-1"><span class="hidden lg:block">consumed</span> units:</p> 
+                <input type="number" id="home_units" required class="bg-red-500 border rounded text-center text-white h-10 placeholder-red-5 00 placeholder-red-300 -ml-9 w-52" placeholder="enter the units">
+            <p class="ml-2 font-bold capitalize ">kw</p>
+                
+              </div>
+              <div class="flex justify-center">
+                <button  class="p-5 bg-blue-500 text-white rounded lg:hover:bg-yellow-500 duration-300 mt-4 capitalize font-bold text-2xl" id="result_home" onclick="housebill()">result</button>
+              </div>
+              <div class="flex justify-center  text-2xl py-10 mt-2  ">
+                <p class="px-4 font-bold capitalize" >bill amount:</p><div class="animate-bounce flex">
+                    <p id="rs1" class=" hidden">₹</p><p  id="output1"></p>
+                </div>
+            </div>
+       </section>
+       <section  class=" p-7    md:p-10 bg-green-50"  id="outcome">
        <p class="text-center  text-lg md:text-3xl">&copy; 2023 created by jesteen. All rights reserved.</p>
        </section>
        <!-- <section class=" overflow-hidden bg-gradient-to-l from-blue-500 to-pink-500 conent   lg:h-40 "></section>
@@ -104,10 +148,16 @@ html{
 }
 </style>
 <script>
-var remove=document.getElementById("remover");
+    
+
+        var remove=document.getElementById("remover");
 function remover(){
 remove.classList.add('hidden')
   
+}
+function otherremove(){
+var remove_other=document.getElementById("remover1");
+remove_other.classList.add('hidden')
 }
 var load={
     washingmachine:2,
@@ -125,7 +175,11 @@ var days=document.getElementById("days");
 var result_output=document.getElementById("output")
 var rs=document.getElementById("rs")
 var cost=4.5;
-
+var data_insert_home=document.getElementById('data_insert_home');
+var decision=0;
+var home_units=document.getElementById('home_units');
+var valid=0 ;
+var check;
 function triger(){
 data_insert.classList.remove("border-red-500");
     if(data_insert.value=="washing_machine"){
@@ -176,33 +230,7 @@ function result(){
                     
                     var kwh=units.value*hours.value*days.value;
                     console.log(kwh);
-                    if(kwh>=401){
-                             if(kwh<=500){
-                                cost=6;
-                             }
-                            else if(kwh>=501){
-                                
-                                if(kwh<=600){
-                                    cost=8;
-                                }
-                                else if(kwh>=601){
-if(kwh<=800){
-cost=9
-}
-else if(kwh>=801){
-    if(kwh<=1000){
-cost=10
-    }
-    else if(kwh>=1000){
-        cost=11
-    }
-}
-
-}
-
-                            }
-                           
-                    }
+                
                     var EEC =units.value*hours.value*days.value*cost;
                     
                        result_output.innerText=EEC.toFixed(2);
@@ -215,6 +243,203 @@ cost=10
     }
 
 }
+function start(){
+  console.log("start");
+  var monthly=100;
+  var bi_monthly=1;
+  if(data_insert_home.value=="monthly"){
+    decision=monthly;
+
+    }
+
+   else if(data_insert_home.value=="bi_monthly"){
+        decision=bi_monthly
+        
+        }
+     
+  
+
+ 
+}
+var home_cost;
+var rs1=document.getElementById("rs1");
+var result_output1=document.getElementById("output1")
+function housebill(){
+
+ 
+   if(data_insert_home.value=="novalue"){
+
+    alert("please select an option")
+    }
+   else{
+    if(!home_units.value==""){
+
+if(home_units.value <= 100){
+alert('The people who consumed 100 units for them the electricity bill is zero');
+result_output1.innerText=0;
+rs1.classList.remove("hidden")
+ rs1.classList.add("block")
+}
+else if( home_units.value >100){
+   var home_units_converted=home_units.value-100;
+   home_cost=4.5    
+   console.log(home_units_converted);
+   
+   if(home_units_converted>=401){
+                             if(home_units_converted<=500){
+                                home_cost=6;
+                             }
+                            else if(home_units_converted>=501){
+                                
+                                if(home_units_converted<=600){
+                                    home_cost=8;
+                                }
+                                else if(home_units_converted>=601){
+if(home_units_converted<=800){
+home_cost=9
+}
+else if(home_units_converted>=801){
+    if(home_units_converted<=1000){
+home_cost=10
+    }
+    else if(home_units_converted>=1000){
+        home_cost=11
+    }
+}
+
+}
+
+                            }
+                           
+                    }
+                   // all calculation ending
+                   
+                   console.log("cost "+home_cost);
+              
+                var total=   home_units_converted;
+                   var home_output_amount=home_cost*total;
+                   console.log("the total "+home_output_amount);
+       
+
+ if(decision==100){
+    
+  console.log("total"+home_output_amount);
+    rs1.classList.remove('hidden');
+    rs1.classList.add('block');
+ 
+     result_output1.innerText=home_output_amount;
+}
+
+else    if(decision==1){
+                    var num1,num2,num3,num4,num5,num6;
+                  num1=101*3.5;
+                  num2=1;
+                  num3=1;
+                  num4=1;
+                  num5=1
+                  num6=1
+                  if(home_units.value <= 100){
+alert('The people who consumed 100 units for them the electricity bill is zero');
+result_output1.innerText=0;
+rs1.classList.remove("hidden")
+ rs1.classList.add("block")
+}
+              else if(home_units_converted<=400 ){
+                    console.log("home working");
+                    console.log("slab1");
+              
+                     num1= (home_units_converted-101)*4.60;
+                   console.log(num1);
+                   num2=0
+                    num3=0
+                    num4=0
+                    num5=0;
+                    num6=0;
+                    if(home_units_converted<=100){
+                        console.log("sub slab 1");
+                        num1=(home_units_converted-50)*2.15;
+                        num2=0
+                    num3=0
+                    num4=0
+                    num5=0;
+                    num6=0;
+                    }
+                   }
+                   else if(home_units_converted<=500){
+                    console.log("slab2");
+                     num1= (400-0)*4.60;
+                    num2=(home_units_converted-401)*6.15;   
+                    num3=0;
+                    num4=0;
+                    num5=0;
+                    num6=0;
+
+                   }
+                   else if(home_units_converted<=600){
+                    console.log("slab3");
+                    num1= (400-0)*4.60;
+                    num2=(500-401)*6.15;
+                     num3=(home_units_converted-501)*8.15;
+                     
+                    num4=0;
+                    num5=0;
+                    num6=0;
+                   }
+                   else if(home_units_converted<=800){
+                    console.log("slab3");
+                    num1= (400-0)*4.60;
+                    num2=(500-401)*6.15;
+                     num3=(600-501)*8.15;
+                     num4=(home_units_converted-601)*9.20;
+                    num5=0;
+                    num6=0;
+
+                   }
+                   else if(home_units_converted<=1000){
+                    console.log("slab4");
+                    num1= (400-0)*4.60;
+                    num2=(500-401)*6.15;
+                     num3=(600-501)*8.15;
+                     num4=(800-601)*9.20;
+                     num5=(home_units_converted-801)*10.20;
+                    num6=0;
+                   }
+                   else if(home_units_converted>1000){
+                    console.log("slab5");
+                    num1= (400-0)*4.60;
+                    num2=(500-401)*6.15;
+                     num3=(600-501)*8.15;
+                     num4=(800-601)*9.20;
+                     num5=(1000-801)*10.20;
+                    num6=(home_units_converted-1000)*11.25;
+                   }
+
+rs1.classList.remove('hidden');
+    rs1.classList.add('block');
+ home_output_amount= num1+num2+num3;
+
+    result_output1.innerText=home_output_amount.toFixed(2);
+                       
+                        console.log(home_units_converted);
+                        /*
+                        1-100->0->0
+101->200>3.5
+201->500>4.6 RS
+501->999/700->6.6
+                        
+                        */
+
+                    }
+                   }
+}
+else{
+ alert("enter the input")
+}
+   }
+
+}
+
+
 
 </script>
 </body>
